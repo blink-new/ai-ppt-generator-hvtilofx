@@ -15,6 +15,9 @@ export default function LandingPage({ onStartGenerating }: LandingPageProps) {
 
   const handleGenerate = () => {
     if (topic.trim()) {
+      // Store the topic and outline for the generator to use
+      localStorage.setItem('presentationTopic', topic)
+      localStorage.setItem('presentationOutline', outline)
       onStartGenerating()
     }
   }
